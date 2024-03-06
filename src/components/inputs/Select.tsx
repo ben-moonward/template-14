@@ -1,6 +1,6 @@
 import { Listbox, Transition } from "@headlessui/react";
 import React, { Component } from "react";
-import Animation from "static/constants/animation-props";
+import Animation from "constants/animation-props";
 
 type Props<Item, SelectedItem extends Item | null> = {
   items?: Item[];
@@ -35,35 +35,38 @@ const Select = <Item, SelectedItem extends Item | null>({
 }: Props<Item, SelectedItem>) => {
   const label = selectedItem ? renderLabel(selectedItem) : placeholder;
   return (
-    <div className={`select ${className}`}>
-      <Listbox value={selectedItem} onChange={onSelect}>
-        <Listbox.Button
-          className={"select-button flex flex-row gap-2 justify-between"}
-        >
-          <p>{label}</p>
-          <div className="-rotate-90">{"<"}</div>
-        </Listbox.Button>
-        <Transition
-          {...Animation.headlessUiDropdown}
-          enter="transition duration-100 ease-out"
-        >
-          <Listbox.Options className={`select-options ${optionsClassName}`}>
-            {isOptional && (
-              <Listbox.Option value={null}>{optionalLabel}</Listbox.Option>
-            )}
-            {items.map((item, index) => (
-              <Listbox.Option
-                value={item}
-                key={index}
-                className={`${item === selectedItem && "selected"}`}
-              >
-                {renderLabel(item)}
-              </Listbox.Option>
-            ))}
-          </Listbox.Options>
-        </Transition>
-      </Listbox>
-    </div>
+    <Listbox
+      value={selectedItem}
+      onChange={onSelect}
+      as={"div"}
+      className={`select ${className}`}
+    >
+      <Listbox.Button
+        className={"select-button flex flex-row gap-2 justify-between"}
+      >
+        <p>{label}</p>
+        <div className="-rotate-90">{"<"}</div>
+      </Listbox.Button>
+      <Transition
+        {...Animation.headlessUiDropdown}
+        enter="transition duration-100 ease-out"
+      >
+        <Listbox.Options className={`select-options ${optionsClassName}`}>
+          {isOptional && (
+            <Listbox.Option value={null}>{optionalLabel}</Listbox.Option>
+          )}
+          {items.map((item, index) => (
+            <Listbox.Option
+              value={item}
+              key={index}
+              className={`${item === selectedItem && "selected"}`}
+            >
+              {renderLabel(item)}
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
+      </Transition>
+    </Listbox>
   );
 };
 

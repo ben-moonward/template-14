@@ -12,6 +12,8 @@ import ErrorIcon from "@/assets/icons/error-icon";
 import { formatCurrency } from "@/utils/formatting";
 
 // Todo: upgrade this
+// support numbers, decimals, percentages
+// decouple from form?
 
 type Props = {
   type: "TEXT" | "NUMBER";
@@ -101,7 +103,7 @@ const ValidationInput: FC<Props> = ({
       <input
         multiple={multiple}
         className={`base-input placeholder:font-normal h-8 disabled:text-opacity-80 
-               disabled:cursor-not-allowed disabled:bg-GREY-Smoke
+               disabled:cursor-not-allowed disabled:bg-grey-dark
                ${
                  !isFocused &&
                  displayType &&

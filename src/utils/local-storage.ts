@@ -1,5 +1,9 @@
-import { LocalStorageTypes } from "../static/types/local-storage.type";
+import { LocalStorageTypes } from "@/types/local-storage.type";
 
+/**
+ * A typed localStorage helper that will parse and stringify for you.
+ * Define new types for local storage in "@/types/local-storage.type".
+ */
 namespace LocalStorage {
   export function get<Key extends keyof LocalStorageTypes>(
     key: Key

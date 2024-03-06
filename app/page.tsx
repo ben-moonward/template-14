@@ -1,4 +1,4 @@
-import Testpage from "@/sub-pages/testpage";
+import Testpage from "@/features/home/testpage";
 
 const items = [
   {
@@ -37,7 +37,10 @@ const items = [
 export default function Home() {
   return (
     <main className="p-10">
-      <div className="">page</div>
+      <div className="line-clamp-3 w-[150px]">
+        page page page page page page page page page page page page page page
+        page page page page
+      </div>
       <div className="">
         <Testpage items={items} />
       </div>

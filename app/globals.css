@@ -28,7 +28,7 @@ body {
 @layer components {
   /* Base Button Style. Extend this to create more button components */
   .button {
-    @apply flex items-center justify-center outline-none border-none bg-grey text-white rounded
+    @apply flex items-center justify-center outline-none border-none bg-grey-dark text-white rounded
       w-full drop-shadow-sm transition-all duration-150 ease-in-out;
   }
   .button:hover {
@@ -46,7 +46,7 @@ body {
     @apply rounded-b-none;
   }
   .select-options {
-    @apply absolute w-full max-h-[100px] overflow-x-hidden overflow-y-auto border rounded border-black bg-white divide-y divide-grey;
+    @apply absolute w-full max-h-[100px] overflow-x-hidden overflow-y-auto border rounded border-black bg-white divide-y divide-grey-dark;
   }
   .select-options[data-headlessui-state="open"] {
     @apply rounded-t-none border-t-0;

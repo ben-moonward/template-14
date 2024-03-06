@@ -1,6 +1,6 @@
 export type LocalStorageTypes = {
-  TEST_STRING: string;
-  TEST_OBJECT: {
+  TEMPLATE_STRING: string;
+  TEMPLATE_OBJECT: {
     label: string;
     value: string;
   };

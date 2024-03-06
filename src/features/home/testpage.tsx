@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Select from "../components/inputs/Select";
+import Select from "../../components/inputs/Select";
 
 type Props = { items: { label: string; data: string }[] };
 
@@ -9,7 +9,8 @@ const Testpage = ({ items }: Props) => {
 
   return (
     <div>
-      <div className="base-button ">Testpage</div>
+      <div className="text-grey-light">light grey</div>
+      <div className="text-grey-dark">dark grey</div>
 
       <div className="">
         <Select

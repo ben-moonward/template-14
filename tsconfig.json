@@ -25,11 +25,14 @@
       "@/components/*": [
         "components/*"
       ],
+      "@/constants/*": [
+        "constants/*"
+      ],
+      "@/features/*": [
+        "features/*"
+      ],
       "@/hooks/*": [
         "hooks/*"
-      ],
-      "@/pages/*": [
-        "pages/*"
       ],
       "@/providers/*": [
         "providers/*"
@@ -40,14 +43,8 @@
       "@/stores/*": [
         "stores/*"
       ],
-      "@/styles/*": [
-        "static/styles/*"
-      ],
-      "@/sub-pages/*": [
-        "sub-pages/*"
-      ],
       "@/types/*": [
-        "static/types/*"
+        "types/*"
       ],
       "@/utils/*": [
         "utils/*"
