@@ -8,12 +8,14 @@ import React, {
   ChangeEvent,
   InputHTMLAttributes,
 } from "react";
-import ErrorIcon from "@/assets/icons/error-icon";
+import ErrorIcon from "@/assets/icons/ErrorIcon";
 import { formatCurrency } from "@/utils/formatting";
 
 // Todo: upgrade this
 // support numbers, decimals, percentages
 // decouple from form?
+
+type InputDisplayType = "PERCENTAGE" | "CURRENCY" | "DAYS";
 
 type Props = {
   type: "TEXT" | "NUMBER";
@@ -38,7 +40,7 @@ type Props = {
   multiple?: boolean;
   autoFocus?: boolean;
   disabled?: boolean;
-  displayType?: "PERCENTAGE" | "CURRENCY" | "DAYS";
+  displayType?: InputDisplayType;
   autoComplete?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
@@ -79,7 +81,10 @@ const ValidationInput: FC<Props> = ({
     onBlur && onBlur(e);
   };
 
-  const formatText = (text: string | number) => {
+  const formatText = (
+    text: string | number,
+    displayType?: InputDisplayType
+  ) => {
     switch (displayType) {
       case "CURRENCY":
         return formatCurrency(Number(text));
@@ -95,8 +100,8 @@ const ValidationInput: FC<Props> = ({
     if (!displayType) return value;
     if (isFocused || value === "") return;
     if (type === "NUMBER" && isNaN(Number(value))) return;
-    return formatText(String(value));
-  }, [value, displayType, isFocused]);
+    return formatText(String(value), displayType);
+  }, [value, displayType, isFocused, type]);
 
   return (
     <div className={`relative w-full ${margin}`}>

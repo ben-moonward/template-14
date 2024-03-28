@@ -1,5 +1,5 @@
 import { Listbox, Transition } from "@headlessui/react";
-import React, { Component } from "react";
+import React from "react";
 import Animation from "constants/animation-props";
 
 type Props<Item, SelectedItem extends Item | null> = {
@@ -10,9 +10,8 @@ type Props<Item, SelectedItem extends Item | null> = {
   placeholder?: string;
   isOptional?: boolean;
   optionalLabel?: string;
-  OptionComponent?: Component;
-  className?: string;
   optionsClassName?: string;
+  className?: string;
 };
 
 /**

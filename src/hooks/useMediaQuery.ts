@@ -28,7 +28,7 @@ const useMediaQuery = (minWidth: SCREEN_SIZE | string): MediaQueryStatus => {
     setMatches(matchMedia.matches);
     matchMedia.addEventListener("change", onChangeEvent);
     return () => matchMedia.removeEventListener("change", onChangeEvent);
-  }, []);
+  }, [minWidth]);
 
   function onChangeEvent(event: MediaQueryListEvent) {
     setMatches(event.matches);

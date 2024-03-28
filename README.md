@@ -23,7 +23,7 @@ Command | Description
 --- | ---
 `npm run dev` | Start dev server
 `npx tsc --noEmit` | Run a type check over the project
-`npm run build` | Run a next build (useful to check Next errors that `tsc` doesn't catch) 
+`npm run lint` | Check for Next errors and warnings (useful to build errors that `tsc` doesn't catch) 
 `npm run sync-backend` | Updates your types to match the latest backend schema (if using fetcher) 
 
 
@@ -33,9 +33,39 @@ Link the relevant Moonward Project doc here
 ### Frontend Dev Docs: 
 Link the general Moonward frontend dev docs here
 
-# Packages
+# Advanced 
+## Reproducing Production-only errors
+Compile server as if it's for prod:
+`npm run build && npm run start`
+This will help with 
+## Working on multiple projects
+### Specifying a dev server port
+`PORT=3007 npm run dev`
 
-Package | Description
---- | ---
+
+- structure
+- file naming
+    - folders: kebab case
+    - files: same name as the default export
 
 
+todo:
+- Go back to older 
+- Make a dev project wiki
+    - What docs?
+
+
+
+goals:
+- reduce dev inefficiencies
+- improve inter-team clarity
+
+
+
+
+
+
+
+src: Application Source Code.
+lib: our "Project Library". 
+bin: executables for tooling.
