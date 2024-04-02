@@ -1,14 +1,13 @@
 
 # Next 14 Web template
 
-Contains Generic and unstyled components.
+Contains generic, unstyled components.
 
 As well as utils and util components for common dev patterns we run into all the time.
  
 Intended as both a starting point for Web projects as well as a reference project for examples on how to use common components.
 
-Not focusing on server side rendering for now as future Next usage is up in the air.
-
+For use with openapi by default.
 
 # Getting Started
 1. Add the relevant `.env` file for this project.
@@ -39,8 +38,8 @@ Compile server as if it's for prod:
 `npm run build && npm run start`
 This will help with 
 ## Working on multiple projects
-### Specifying a dev server port
-`PORT=3007 npm run dev`
+### Specifying a port to run dev server
+e.g. `PORT=3007 npm run dev`
 
 
 - structure
@@ -50,7 +49,7 @@ This will help with
 
 
 todo:
-- Go back to older 
+- Go back to older projects and find components to convert
 - Make a dev project wiki
     - What docs?
 

@@ -1,12 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{html,js,jsx,ts,tsx}",
-    "./pages/**/*.{html,js,jsx,ts,tsx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./public/**/*.html",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./public/**/*.html"],
   theme: {
     extend: {
       colors: {
@@ -22,7 +17,6 @@ const config: Config = {
       gridTemplateColumns: {},
       fontSize: {},
     },
-    colors: {},
   },
   plugins: [],
 };

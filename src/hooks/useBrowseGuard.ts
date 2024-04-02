@@ -4,7 +4,7 @@
  *
  * The hook is active as long as the component is mounted.
  *
- * Below are the exposed methods for bypassing the browse guard. E.g. for a Submit action.
+ * Below are the exposed methods for overriding the browse guard e.g. for a Submit action.
  * -- push (...args: Parameters<typeof router.push>): void --
  * * Use this for going to a route without triggering the browse guard.
  * -- reload (): void --
@@ -91,4 +91,5 @@ export function useBrowseGuard({
 
   return { push, reload, decline };
 }
+
 export default useBrowseGuard;
