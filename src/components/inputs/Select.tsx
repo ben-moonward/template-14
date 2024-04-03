@@ -1,6 +1,6 @@
 import { Listbox, Transition } from "@headlessui/react";
 import React from "react";
-import Animation from "constants/animation-props";
+import Animation from "@/constants/animation-props";
 
 type Props<Item, SelectedItem extends Item | null> = {
   items?: Item[];
