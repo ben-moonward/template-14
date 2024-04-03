@@ -20,7 +20,7 @@ For use with openapi by default.
 # Development
 Command | Description
 --- | ---
-`npm run dev` | Start dev server
+`npm run dev` | Start dev server. Reads PORT from `.env`.
 `npx tsc --noEmit` | Run a type check over the project
 `npm run lint` | Check for Next errors and warnings (useful to build errors that `tsc` doesn't catch) 
 `npm run sync-backend` | Updates your types to match the latest backend schema (if using fetcher) 
@@ -32,7 +32,7 @@ Link the relevant Moonward Project doc here
 ### Frontend Dev Docs: 
 Link the general Moonward frontend dev docs here
 
-# Advanced 
+<!-- # Advanced 
 ## Reproducing Production-only errors
 Compile server as if it's for prod:
 `npm run build && npm run start`
@@ -67,4 +67,4 @@ goals:
 
 src: Application Source Code.
 lib: our "Project Library". 
-bin: executables for tooling.
+bin: executables for tooling. -->
