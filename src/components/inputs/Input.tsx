@@ -8,7 +8,7 @@ import React, {
   ChangeEvent,
   InputHTMLAttributes,
 } from "react";
-import ErrorIcon from "@/assets/icons/ErrorIcon";
+import ErrorIcon from "../../../public/assets/icons/ErrorIcon";
 import { formatCurrency } from "@/utils/formatting";
 
 // Todo: upgrade this
@@ -83,7 +83,7 @@ const ValidationInput: FC<Props> = ({
 
   const formatText = (
     text: string | number,
-    displayType?: InputDisplayType
+    displayType?: InputDisplayType,
   ) => {
     switch (displayType) {
       case "CURRENCY":

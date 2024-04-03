@@ -1,12 +1,19 @@
-import { LocalStorageTypes } from "@/types/local-storage.type";
-
 /**
  * A typed localStorage helper that will parse and stringify for you.
  * Define new types for local storage in "@/types/local-storage.type".
  */
+
+export type LocalStorageTypes = {
+  TEMPLATE_STRING: string;
+  TEMPLATE_OBJECT: {
+    label: string;
+    value: string;
+  };
+};
+
 namespace LocalStorage {
   export function get<Key extends keyof LocalStorageTypes>(
-    key: Key
+    key: Key,
   ): LocalStorageTypes[Key] | undefined {
     const value = localStorage.getItem(key);
     return value ? JSON.parse(value) : undefined;
@@ -14,7 +21,7 @@ namespace LocalStorage {
 
   export function set<Key extends keyof LocalStorageTypes>(
     key: Key,
-    value: LocalStorageTypes[Key]
+    value: LocalStorageTypes[Key],
   ) {
     localStorage.setItem(key, JSON.stringify(value));
   }
