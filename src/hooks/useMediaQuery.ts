@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
 export enum SCREEN_SIZE {
-  "sm" = "640px",
-  "md" = "768px",
-  "lg" = "1024px",
-  "xl" = "1280px",
-  "2xl" = "1536px",
+    "sm" = "640px",
+    "md" = "768px",
+    "lg" = "1024px",
+    "xl" = "1280px",
+    "2xl" = "1536px",
 }
 
 export type MediaQueryStatus = {
-  isInitialized: boolean;
-  matches: boolean | null;
+    isInitialized: boolean;
+    matches: boolean | null;
 };
 
 /**
@@ -20,24 +20,24 @@ export type MediaQueryStatus = {
  * @returns MediaQueryStatus
  */
 const useMediaQuery = (minWidth: SCREEN_SIZE | string): MediaQueryStatus => {
-  const [matches, setMatches] = useState<boolean | null>(null);
-  const isInitialized = matches !== null;
+    const [matches, setMatches] = useState<boolean | null>(null);
+    const isInitialized = matches !== null;
 
-  useEffect(() => {
-    const matchMedia = window.matchMedia(`(min-width: ${minWidth})`);
-    setMatches(matchMedia.matches);
-    matchMedia.addEventListener("change", onChangeEvent);
-    return () => matchMedia.removeEventListener("change", onChangeEvent);
-  }, [minWidth]);
+    useEffect(() => {
+        const matchMedia = window.matchMedia(`(min-width: ${minWidth})`);
+        setMatches(matchMedia.matches);
+        matchMedia.addEventListener("change", onChangeEvent);
+        return () => matchMedia.removeEventListener("change", onChangeEvent);
+    }, [minWidth]);
 
-  function onChangeEvent(event: MediaQueryListEvent) {
-    setMatches(event.matches);
-  }
+    function onChangeEvent(event: MediaQueryListEvent) {
+        setMatches(event.matches);
+    }
 
-  return {
-    isInitialized,
-    matches,
-  };
+    return {
+        isInitialized,
+        matches,
+    };
 };
 
 export default useMediaQuery;

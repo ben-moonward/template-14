@@ -1,13 +1,12 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
-  // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
-
-  // List of extensions which should be recommended for users of this workspace.
-  "recommendations": [
-    "rvest.vs-code-prettier-eslint",
-    "bradlc.vscode-tailwindcss",
-    "dbaeumer.vscode-eslint"
-  ],
-  // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
-  "unwantedRecommendations": []
+    // Our recommendended extensions
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "dsznajder.es7-react-js-snippets",
+        "eamodio.gitlens"
+    ],
+    // code-spell-checker is not recommended as it does not match cspell-eslint.
+    "unwantedRecommendations": ["streetsidesoftware.code-spell-checker"]
 }

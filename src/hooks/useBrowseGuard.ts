@@ -8,7 +8,9 @@
  * -- push (...args: Parameters<typeof router.push>): void --
  * * Use this for going to a route without triggering the browse guard.
  * -- reload (): void --
- * * Use this for reloading the page without triggering the browse guard
+ * * Use this for reloading the page without triggering the browse guard.
+ * -- decline (): void --
+ * * Use this for when the user declines to go ahead with browsing away (e.g. clicks "cancel").
  */
 
 import router from "next/router";

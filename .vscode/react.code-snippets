@@ -17,7 +17,7 @@
     "React Component Starter With More Stuff": {
         "prefix": "comf",
         "body": [
-            "import { cn } from \"@/utils/cn\";",
+            "import cn from \"@/utils/cn\";",
             "import { ClassValue } from \"clsx\";",
             "import React, { FC } from \"react\";",
             "",
@@ -33,5 +33,19 @@
             "export default ${TM_FILENAME_BASE/(?:^|-)(\\w)/${1:/upcase}/g};"
         ],
         "description": "Creates a react component with an extra prop placeholder and classname using cn already baked in."
-    }
+    },
+    "Log value as pretty JSON": {
+        "prefix": "jso",
+        "body": [
+            "JSON.stringify($1, null, 4)",
+        ],
+        "description": "Useful shortcut when debugging by outputting to the DOM or a terminal."
+    },
+    "Console log": {
+        "prefix": "con",
+        "body": [
+            "console.log(`$1`, $2)"
+        ],
+        "description": "Console log with a string label. Useful for logging a variable."
+    },
 }
