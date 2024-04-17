@@ -1,3 +1,3 @@
 export type Example = {
-  test: boolean;
+    test: boolean;
 };

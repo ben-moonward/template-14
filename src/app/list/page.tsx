@@ -5,14 +5,14 @@ import Link from "next/link";
  * todo: add command palette
  */
 export default function List() {
-  return (
-    <>
-      <div className="h-[40vh] border p-4">abc</div>
-      <div className="h-[40vh] border p-4">abc</div>
-      <div className="h-[40vh] border p-4" id="123">
-        abc
-      </div>
-      <div className="h-[40vh] border p-4">abc</div>
-    </>
-  );
+    return (
+        <>
+            <div className="h-[40vh] border p-4">abc</div>
+            <div className="h-[40vh] border p-4">abc</div>
+            <div className="h-[40vh] border p-4" id="123">
+                abc
+            </div>
+            <div className="h-[40vh] border p-4">abc</div>
+        </>
+    );
 }

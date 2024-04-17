@@ -1,22 +1,8 @@
 // Project-specific VSCode settings. These are here to maintain settings consistency between developer's machines.
-
-// Prettier ESLint is a prerequisite for linting and formatting.
+// Please install the recommended extensions found in extensions.json first.
 
 {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "file",
-    "vs-code-prettier-eslint.prettierLast": false,
-    "[*]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    },
-    "[snippets]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "cSpell.words": [
-        "libphonenumber"
-    ],
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    "editor.formatOnSaveMode": "file"
 }

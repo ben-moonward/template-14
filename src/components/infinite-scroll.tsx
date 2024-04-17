@@ -1,7 +1,7 @@
 import React from "react";
 
 const InfiniteScroll = () => {
-  return <div>InfiniteScroll</div>;
+    return <div>InfiniteScroll</div>;
 };
 
 export default InfiniteScroll;

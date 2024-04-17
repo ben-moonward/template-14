@@ -5,38 +5,38 @@ import { InfiniteData } from "react-query";
  * TEMPLATE: UPDATE `DataPagination` TO MATCH SHAPE FROM BACKEND
  */
 export type DataPagination = {
-  total: number;
-  lastPage: number;
-  currentPage: number;
-  perPage: number;
-  from: number;
-  to: number;
+    total: number;
+    lastPage: number;
+    currentPage: number;
+    perPage: number;
+    from: number;
+    to: number;
 };
 
 export type PaginatedData<I> = {
-  data: I[];
-  pagination: DataPagination;
+    data: I[];
+    pagination: DataPagination;
 };
 
 export type PaginationDataSet<I> = InfiniteData<ApiResponse<PaginatedData<I>>>;
 
 export const getNextPageParam = <I>(
-  lastPage: ApiResponse<PaginatedData<I>>
+    lastPage: ApiResponse<PaginatedData<I>>,
 ) => {
-  try {
-    const { lastPage: prevPage, currentPage } = lastPage.data.pagination;
-    if (prevPage > currentPage) return currentPage + 1;
-  } catch {
-    return undefined;
-  }
+    try {
+        const { lastPage: prevPage, currentPage } = lastPage.data.pagination;
+        if (prevPage > currentPage) return currentPage + 1;
+    } catch {
+        return undefined;
+    }
 };
 
 export const getItemsFromPagination = <I>(
-  data: PaginationDataSet<I> | undefined
+    data: PaginationDataSet<I> | undefined,
 ): I[] => {
-  if (!data || !data.pages) return [];
-  const pages = data.pages.map(page => page.data);
-  if (!pages) return [];
-  const items = pages.flatMap(page => page.data);
-  return items;
+    if (!data || !data.pages) return [];
+    const pages = data.pages.map(page => page.data);
+    if (!pages) return [];
+    const items = pages.flatMap(page => page.data);
+    return items;
 };
