@@ -13,6 +13,7 @@
             "export default ${TM_FILENAME_BASE/(?:^|-)(\\w)/${1:/upcase}/g};",
         ],
         "description": "Creates a barebones react component with pascal case component name.",
+        "scope": "javascriptreact,typescript,typescriptreact",
     },
     "React Component Starter With More Stuff": {
         "prefix": "comf",
@@ -33,6 +34,23 @@
             "export default ${TM_FILENAME_BASE/(?:^|-)(\\w)/${1:/upcase}/g};",
         ],
         "description": "Creates a react component with an extra prop placeholder and classname using cn already baked in.",
+        "scope": "javascriptreact,typescript,typescriptreact",
+    },
+    "Const function": {
+        "prefix": "func",
+        "body": [
+            "export type ${TM_FILENAME_BASE/(?:^|-)(\\w)/${1:/upcase}/g}Args = {",
+            "    param: unknown;",
+            "};",
+            "",
+            "const ${TM_FILENAME_BASE/(?:^|-)(\\w)/${1:/upcase}/g} = ({ param }: ${TM_FILENAME_BASE/(?:^|-)(\\w)/${1:/upcase}/g}Args) => {",
+            "    return ${2:param};",
+            "};",
+            "",
+            "export default ${TM_FILENAME_BASE/(?:^|-)(\\w)/${1:/upcase}/g};",
+        ],
+        "description": "Creates a react component with an extra prop placeholder and classname using cn already baked in.",
+        "scope": "typescript,typescriptreact",
     },
     "Log value as pretty JSON": {
         "prefix": "jso",
