@@ -1,13 +1,12 @@
-import type { Config } from "jest";
-import nextJest from "next/jest.js";
-import { compilerOptions } from "./tsconfig.json";
-import { pathsToModuleNameMapper } from "ts-jest";
+const { compilerOptions } = require("./tsconfig.json");
+const { pathsToModuleNameMapper } = require("ts-jest");
+const nextJest = require("next/jest.js");
 
 const createJestConfig = nextJest({
     dir: "./",
 });
 
-const config: Config = {
+const config = {
     coverageProvider: "v8",
     testEnvironment: "jsdom",
     roots: ["<rootDir>"],
@@ -15,4 +14,4 @@ const config: Config = {
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
 };
 
-export default createJestConfig(config);
+module.exports = createJestConfig(config);

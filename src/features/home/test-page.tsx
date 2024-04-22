@@ -1,5 +1,5 @@
 "use client";
-import Select from "@/components/inputs/select";
+import Select from "@/components/inputs/Select";
 import React, { useState } from "react";
 
 type Props = { items: { label: string; data: string }[] };

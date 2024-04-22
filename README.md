@@ -71,3 +71,8 @@ goals:
 src: Application Source Code.
 lib: our "Project Library".
 bin: executables for tooling. -->
+
+
+<!-- Onboard setup stuff: 
+npm i -g prettier ?
+ -->

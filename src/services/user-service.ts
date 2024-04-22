@@ -1,6 +1,3 @@
-namespace UserService {
-    const smartre = "";
-    console.log("smartre", smartre);
-}
+namespace UserService {}
 
 export default UserService;
