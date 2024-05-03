@@ -1,49 +1,10 @@
-import TestPage from "@/features/home/test-page";
+import PrefetchedList from "@/components/prefetched-list";
 
-const items = [
-    {
-        label: "lol",
-        data: "lol",
-    },
-    {
-        label: "ppl",
-        data: "ppl",
-    },
-    {
-        label: "lol",
-        data: "lol",
-    },
-    {
-        label: "ppl",
-        data: "ppl",
-    },
-    {
-        label: "lol",
-        data: "lol",
-    },
-    {
-        label: "ppl",
-        data: "ppl",
-    },
-    {
-        label: "lol",
-        data: "lol",
-    },
-    {
-        label: "ppl",
-        data: "ppl",
-    },
-];
 export default function Home() {
     return (
         <main className="p-10">
-            <div className="line-clamp-3 w-[150px]">
-                page page page page page page page page page page page page page
-                page page page page page
-            </div>
-            <div className="">
-                <TestPage items={items} />
-            </div>
+            <h1 className="text-4xl">Moonward Components</h1>
+            <PrefetchedList />
         </main>
     );
 }

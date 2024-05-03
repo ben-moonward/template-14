@@ -1,5 +1,5 @@
+import { InfiniteData } from "@tanstack/react-query";
 import { ApiResponse } from "openapi-typescript-fetch";
-import { InfiniteData } from "react-query";
 
 /*
  * TEMPLATE: UPDATE `DataPagination` TO MATCH SHAPE FROM BACKEND

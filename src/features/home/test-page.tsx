@@ -1,5 +1,6 @@
 "use client";
-import Select from "@/components/inputs/Select";
+
+import Select from "@/components/inputs/select";
 import React, { useState } from "react";
 
 type Props = { items: { label: string; data: string }[] };
@@ -10,7 +11,7 @@ const TestPage = ({ items }: Props) => {
     );
 
     return (
-        <div>
+        <main>
             <div className="text-grey-light">light grey</div>
             <div className="text-grey-dark">dark grey</div>
 
@@ -19,14 +20,12 @@ const TestPage = ({ items }: Props) => {
                     onSelect={item => setSelected(item)}
                     selectedItem={selected}
                     items={items}
-                    renderLabel={item => {
-                        return item.label;
-                    }}
+                    renderLabel={item => item.label}
                     placeholder="placeholder"
                 />
                 <div className="s">stuff</div>
             </div>
-        </div>
+        </main>
     );
 };
 

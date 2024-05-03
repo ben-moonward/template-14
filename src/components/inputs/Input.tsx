@@ -8,7 +8,7 @@ import React, {
     ChangeEvent,
     InputHTMLAttributes,
 } from "react";
-import ErrorIcon from "../../../public/assets/icons/ErrorIcon";
+import ErrorIcon from "../icons/error-icon";
 import { formatCurrency } from "@/utils/formatting";
 
 // Todo: upgrade this

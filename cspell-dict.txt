@@ -6,4 +6,5 @@ libphonenumber
 notistack
 openapi
 tailwindcss
+tanstack
 zustand

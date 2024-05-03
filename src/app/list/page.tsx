@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 /**
  * Components list page
  * todo: add command palette
