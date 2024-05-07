@@ -8,9 +8,14 @@ type Props = {
 
 const Sidebar: FC<Props> = ({ className = "" }) => {
     return (
-        <nav className={cn("h-full border-r overflow-y-hidden", className)}>
+        <nav
+            className={cn(
+                "h-screen border-r overflow-y-hidden w-[200px]",
+                className,
+            )}
+        >
             <div className="text-center">Title</div>
-            <div className="h-full flex flex-col divide-y gap-4 overflow-y-auto">
+            <div className="flex flex-col divide-y gap-4 overflow-y-auto">
                 {Array(5)
                     .fill(0)
                     .map((_, i) => (

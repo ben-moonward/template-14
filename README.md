@@ -1,4 +1,4 @@
-# Next 14 Web template
+# Next 14 Web Template
 
 Contains generic, unstyled components.
 
@@ -12,7 +12,7 @@ For use with openapi by default.
 
 1. Add the relevant `.env` file for this project.
 2. Run `npm install`.
-3. Run `npm run sync-backend` (if using fetcher).
+3. Run `npm run sync-backend` (if using openapi).
 4. Run `npm run dev`. Once compiled, you can access the local webpage at <http://localhost:3000>.
 5. That's all! :)
 
@@ -24,6 +24,7 @@ For use with openapi by default.
 | `npx tsc --noEmit`     | Run a type check over the project                                                    |
 | `npm run lint`         | Check for Next errors and warnings (useful to build errors that `tsc` doesn't catch) |
 | `npm run sync-backend` | Updates your types to match the latest backend schema (if using fetcher)             |
+| `npm run test`         | Run project Jest tests                                                               |
 
 ## Docs
 
@@ -38,27 +39,27 @@ Link the general Moonward frontend dev docs here
 ## File Structure
 
 - `.vscode`
-  - `extensions.json` - recommended VSCode extensions for this project.
-  - `react.code-snippets` - code snippets for saving time on common workflows.
+  - `extensions.json` - Recommended VSCode extensions for this project.
+  - `react.code-snippets` - Code snippets for saving time on common workflows.
   - `settings.json` - VSCode settings specific for this project.
-- `bin` - executables e.g. prebuild, openapi
+- `bin` - Executables e.g. prebuild, openapi
 - `public`
-  - `assets` ? not sure about this as we use .tsx for icons
-- `src`
+  - `assets` - Public assets here such as images.
+- `src` - All project source code goes here.
 
   - `app` - App router folder. Avoid putting non-next files here - use for routing and layouts.
   - `components` - General components used across the apps here
     - …
-    - `utilities` ?
+    - `utilities` -
   - `constants`
   - `features`
-    - `<feature-name>` - each feature uses 1 folder here.
-      - Feature folders. Components, utils, hooks, specific to the feature go into their own folders here. Code in here should not be imported in other features.
+    - `<feature-name>` - Major features are abstracted into their own folders.
+      - Components, utils, hooks, specific to the feature go into their own folders here. Code per function should not be imported by other features (use general if it is reused).
       - `types.ts` Types specific for this feature. We use 1 type file per feature unless it’s getting bloated.
   - `hooks` - Common utility hooks for the project.
-  - `providers` context providers
-  - `services`
-  - `stores`
+  - `providers` Context providers
+  - `services` - Reusable code that interacts with external systems/APIs.
+  - `stores` - State management logic here (global state etc.)
   - `styles`
     - Only globals css?
   - `tests` (Should be in root/outside of src)
@@ -73,15 +74,15 @@ Link the general Moonward frontend dev docs here
 
 - `.env.example` - .env file with annotations and empty values.
 - `.eslintrc.json` - ESLint config file.
-- `.gitignore` - files for git to ignore.
+- `.gitignore` - Files for git to ignore.
 - `.prettierrc.json` - Prettier config.
-- `cspell-dict.txt` - add words for cspell to ignore here. Be liberal with adding new words.
-- `cspell.json` - spellchecker config.
+- `cspell-dict.txt` - Add words for cspell to ignore here. Be liberal with adding new words.
+- `cspell.json` - Spell checker config.
 - `jest.config.js` - Jest testing config.
 - `next.config.js` - Next JS config.
-- `package-lock.json` - do not edit manually. However, please do commit the changes here if you install new packages.
+- `package-lock.json` - Do not edit this manually. However, please do commit the changes here if you install new packages.
 - `package.json` - npm config. Scripts and package dependencies go here.
 - `postcss.config.json` - PostCSS config.
-- `[README.md](http://README.md)` - project Readme.
+- `README.md` - project Readme.
 - `tailwind.config.js` - Tailwind config. The project’s custom style classes are defined here.
 - `tsconfig.json` - TypeScript compilation config.

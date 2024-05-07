@@ -1,35 +1,21 @@
-import LibraryService from "@/services/library-service";
 import {
+    FetchInfiniteQueryOptions,
     HydrationBoundary,
     QueryClient,
     dehydrate,
 } from "@tanstack/react-query";
-import React, { FC, Suspense } from "react";
-import ClientPrefetchedList from "./client-side";
+import React, { FC, ReactNode } from "react";
 
-type Props = {};
+type Props = { params: FetchInfiniteQueryOptions; children: ReactNode };
 
-const PrefetchedList: FC<Props> = async () => {
+const PrefetchWrapper: FC<Props> = async ({ params, children }) => {
     const queryClient = new QueryClient();
-
-    await queryClient.prefetchInfiniteQuery({
-        queryKey: ["list"],
-        queryFn: () => {
-            return LibraryService.getLibrary({ page: 1 });
-        },
-        getNextPageParam() {
-            return undefined;
-        },
-        initialPageParam: 1,
-    });
-
+    await queryClient.prefetchInfiniteQuery({ ...params });
     return (
-        <Suspense>
-            <HydrationBoundary state={dehydrate(queryClient)}>
-                <ClientPrefetchedList />
-            </HydrationBoundary>
-        </Suspense>
+        <HydrationBoundary state={dehydrate(queryClient)}>
+            {children}
+        </HydrationBoundary>
     );
 };
 
-export default PrefetchedList;
+export default PrefetchWrapper;

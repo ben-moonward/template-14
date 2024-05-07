@@ -6,10 +6,11 @@ import { NextResponse } from "next/server";
 export async function GET(request: Request) {
     // const wait = Math.random() * (2 - 0.5) + 0.5;
     // await new Promise(resolve => setTimeout(resolve, wait * 1000));
-    await new Promise(resolve => setTimeout(resolve, 250));
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
     const { searchParams } = new URL(request.url);
     const page = Number(searchParams.get("page"));
+    console.log(`s`, searchParams);
     const pageSize = 5 as const;
     const start = (page - 1) * pageSize;
     const end = start + pageSize;
